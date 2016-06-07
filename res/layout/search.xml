@@ -28,7 +28,10 @@
                 android:hint="@string/search_hit"
                 android:paddingLeft="40dp"
                 android:paddingRight="40dp"
-                android:singleLine="true" />
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:singleLine="true" 
+                android:background="@drawable/shape_edittext_bg"/>
 
             <ImageView
                 android:id="@+id/iv_ListClear"

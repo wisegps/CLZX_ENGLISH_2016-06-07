@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff">
+    
+    <RelativeLayout 
+        android:id="@+id/rl_manager_call"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/ic_phone"  />
+        <TextView 
+	        android:id="@+id/tv_manager_phone"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"   
+	        android:layout_centerInParent="true"  
+	        android:textColor="@color/color_content"  
+	        android:text="管理：邓肯   123456789" />
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eaeaea"/>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_drive_call"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/ic_phone" />
+         <TextView 
+	        android:id="@+id/tv_drive_phone"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"  
+	        android:layout_centerInParent="true"  
+	        android:textColor="@color/color_content"    
+	        android:text="司机：帕克   123456789" />
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eaeaea"/>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_track_location"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/ic_location" />
+         <TextView 
+	        android:id="@+id/tv_track"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" 
+	        android:layout_centerInParent="true" 
+	        android:textColor="@color/color_content"      
+	        android:text="@string/track" />
+    </RelativeLayout>
+   
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eaeaea"/>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_track_replay"
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/ic_track" />
+         <TextView 
+	        android:id="@+id/tv_track_replay"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"  
+	        android:layout_centerInParent="true"  
+	        android:textColor="@color/color_content"    
+	        android:text="@string/track_replay" />
+    </RelativeLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eaeaea"/>
+    
+    <TextView 
+        android:id="@+id/tv_dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textColor="@color/color_content"
+        android:text="@string/cancel"
+        />
+    
+
+</LinearLayout>

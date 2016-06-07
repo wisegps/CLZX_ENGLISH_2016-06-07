@@ -4,5 +4,7 @@
     <color name="chat_input_shadow_color">#C8C9CA</color>
     <color name="common_normal">#1bb3cf</color>
     <color name="common_pressed">#106576</color>
+    
+    <color name="color_content">#545866</color>
 
 </resources>

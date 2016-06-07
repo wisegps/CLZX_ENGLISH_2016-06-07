@@ -77,6 +77,9 @@
    	<string name="car_manager">管理:&#160; </string> 
    	<string name="car_driver">司机:&#160; </string> 
    	<string name="car_fuel">油量 ：</string>
+   	<string name="cancel">取消</string>
+   	<string name="track_replay">轨迹回放</string>
+   	<string name="track">跟踪</string>
    	
    	<string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">松开刷新数据</string>

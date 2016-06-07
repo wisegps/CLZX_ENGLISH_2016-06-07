@@ -41,5 +41,13 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    
+    <!--底部弹出-->
+    <style name="popupwindow_buttom_anim">
+        <item name="android:windowEnterAnimation">@anim/popupwindow_buttom_in</item>
+        <item name="android:windowExitAnimation">@anim/popupwindow_buttom_out</item>
+    </style>
+    
 
 </resources>

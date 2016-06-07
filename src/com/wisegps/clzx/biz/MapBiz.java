@@ -103,23 +103,6 @@ public class MapBiz {
 //
 //		});
 		
-//		tvManangerPhone.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				call(tvManangerPhone.getText().toString());
-//			}
-//
-//		});
-//		
-//		tvDriverPhone.setOnClickListener(new OnClickListener() {
-//			@Override
-//			public void onClick(View arg0) {
-//				call(tvDriverPhone.getText().toString());
-//			}
-//
-//		});
-		
-		
 		String  model = carInfo.getObjModel();
 		if( model!=null && model.length()>0){
 			tv_car_id.setText(name+"("+ model +")");

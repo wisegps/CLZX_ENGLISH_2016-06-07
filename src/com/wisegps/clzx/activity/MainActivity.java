@@ -46,7 +46,6 @@ public class MainActivity extends Activity implements OnClickListener,
 	private GoogleMapViewHelper googleMapViewHelper;
 	private ViewFlipper flipper;
 	private Jpush jpush = null;
-	
 	private GoogleMap googleMap;
 	private WGoogleMap wgoogleMap;
 	
@@ -64,28 +63,18 @@ public class MainActivity extends Activity implements OnClickListener,
 		View mapView = mLayoutInflater.inflate(R.layout.map, null);
 		flipper.addView(mapView);
 		
-		
 		MapFragment mapFragment = (MapFragment) getFragmentManager()
         	    .findFragmentById(R.id.MapView);
         mapFragment.getMapAsync(this); 
         googleMap = mapFragment.getMap();
         wgoogleMap = new WGoogleMap(this,googleMap);
-        
-		
-		
-		
+       
 		carViewHelper = new CarViewHelper(this);
 		// 实现点击车辆列表,切换车辆监听
 		carViewHelper.setOnCarSelectedListener(this);
 		
 		googleMapViewHelper = new GoogleMapViewHelper(this, googleMap);
 		googleMapViewHelper.setOnCarSelectByKeyListener(this);
-		//		mapViewHelper.setOnCarSelectByKeyListener(this);
-		
-		
-		
-		
-		
 		findViewById(R.id.tv_set_map_type).setOnClickListener(this);
 		jpush = new Jpush(this);
 		jpush.initJpushSdk();
@@ -162,10 +151,10 @@ public class MainActivity extends Activity implements OnClickListener,
 	@Override
 	public void onCarSelected(final int index) {
 		Log.i("MainActivity", "onCarSelected" + index);
-//		if (mapViewHelper.isRunning()) {
-//			mapViewHelper.stopFlow();
-//			mapViewHelper.stopTrack();
-//		}
+		if (googleMapViewHelper.isRunning()) {
+			googleMapViewHelper.stopFlow();
+			googleMapViewHelper.stopTrack();
+		}
 
 		new Handler().postDelayed(new Runnable() {
 
@@ -192,9 +181,9 @@ public class MainActivity extends Activity implements OnClickListener,
 	public void onCarSelectedDefault(int index) {
 		Log.i("MainActivity", "onCarSelectedDefault" + index);
 		// 如果没有跟踪，没有轨迹回放，就重新刷新绘制车辆
-//		if (mapViewHelper.isRunning() == false) {
-//			mapViewHelper.showAllCar(carViewHelper.getCarinfos(), index);
-//		}
+		if (googleMapViewHelper.isRunning() == false) {
+			googleMapViewHelper.showAllCar(carViewHelper.getCarinfos(), index);
+		}
 
 	}
 
@@ -204,9 +193,9 @@ public class MainActivity extends Activity implements OnClickListener,
 	@Override
 	public void onCarRefresh() {
 		// 如果没有跟踪，没有轨迹回放，就重新刷新绘制车辆
-//		if (mapViewHelper.isRunning() == false) {
-//			mapViewHelper.refreshCar(carViewHelper.getCarinfos());
-//		}
+		if (googleMapViewHelper.isRunning() == false) {
+			googleMapViewHelper.refreshCar(carViewHelper.getCarinfos());
+		}
 	}
 
 	@Override
@@ -220,8 +209,7 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		case R.id.iv_Search:// 跳转到列表页
 			flipper.setDisplayedChild(0);
-//			mapViewHelper.stopFlow();// 停止跟踪轨迹
-
+			googleMapViewHelper.stopFlow();// 停止跟踪轨迹
 			break;
 		case R.id.iv_map_traffic_set:// 交通图显示
 			setTraffic(view);
@@ -270,7 +258,6 @@ public class MainActivity extends Activity implements OnClickListener,
 
 	@Override
 	public void finish() {
-
 		super.finish();
 	}
 
@@ -299,7 +286,7 @@ public class MainActivity extends Activity implements OnClickListener,
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
 			carViewHelper.stopReresh();
-//			mapViewHelper.reset();
+			googleMapViewHelper.reset();
 		}
 		return super.onKeyDown(keyCode, event);
 	}
@@ -313,21 +300,6 @@ public class MainActivity extends Activity implements OnClickListener,
 
 		return true;
 	}
-
-	// public void set(View view) {
-	// switch (view.getId()) {
-	// case R.id.btn_params:
-	// set(1);
-	// break;
-	// case R.id.btn_psd:
-	// set(2);
-	// break;
-	// case R.id.btn_about:
-	// set(3);
-	// break;
-	//
-	// }
-	// }
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
