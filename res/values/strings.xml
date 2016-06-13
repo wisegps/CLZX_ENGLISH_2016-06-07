@@ -1,108 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources> 
     <string name="language">zh-CN</string>   
-	<string name="app_name">车联在线</string>
-    <string name="Note">提示</string>
-    <string name="image_description">图片</string>
+	<string name="app_name">Car Online</string>
+    <string name="Note">Note</string>
+    <string name="image_description">Image</string>
     <!-- 起始页 -->
     <string name="last_update">last update 2013-10-21</string>
     <string name="copyright1">Copyright by Tracknet Asia</string>
     <string name="copyright2">2011-2012</string>
     
-    <string name="car_data">车辆数据</string>
-    <string name="loading_car_context">加载中，请稍后.</string>
+    <string name="car_data">Car Data</string>
+    <string name="loading_car_context">loading...</string>
     <!-- 登录 -->
-    <string name="tv_check_update">系统检测到有新版本，点击更新</string>
-    <string name="SD_NOTFIND">SD卡不存在</string>
-    <string name="Google">google地图不可用</string>
-    <string name="account_hit">请输入账号</string>
-    <string name="password_hit">请输入密码</string>
-    <string name="login">登录</string>
-    <string name="check_pwd">记住密码</string>
-    <string name="login_pd_context">登录中，请稍后.</string>
-    <string name="login_id_wrong">账号密码不匹配，请再次尝试</string>
-    <string name="Login_null">用户名和密码不能为空，请重试。</string>
-    <string name="accout_bind_phone">该账号已绑定其他手机</string>
+    <string name="tv_check_update">Hava a new version,please update</string>
+    <string name="SD_NOTFIND">SD card does not exist</string>
+    <string name="Google">google map can not be use </string>
+    <string name="account_hit">Account</string>
+    <string name="password_hit">Password</string>
+    <string name="login">Login</string>
+    <string name="check_pwd">Remember Password</string>
+    <string name="login_pd_context">Login...</string>
+    <string name="login_id_wrong">Account and password does not match,try again</string>
+    <string name="Login_null">Account and password can not be null,try again</string>
+    <string name="accout_bind_phone">The account has been bound to other mobile phone</string>
     <!-- 主页面 -->        
-    <string name="search_hit">请输入搜索内容</string>
-    <string name="exit_content">你确定退出应用?</string>   
-    <string name="monitor_car">跟踪</string>
-    <string name="monitor_locus">轨迹回放</string>
+    <string name="search_hit">input the keyword</string>
+    <string name="exit_content">Exit application?</string>   
+    <string name="monitor_car">Track</string>
+    <string name="monitor_locus">Track Playback</string>
     
     
-    <string name="locus_dialog_start">开始时间:</string>
-    <string name="locus_dialog_stop">结束时间:</string>
-    <string name="locas_speed">速度</string>    
-    <string name="monitor_locus_load">历史轨迹查询中.</string>
-    <string name="monitor_locus_null">轨迹路径为空</string>
-    <string name="car_dialog_title">确认时间段</string>
-      <string name="track_play_finish">轨迹播放完毕</string>
-    <string name="car_dialog_ok">查询</string>
-    <string name="car_dialog_et_null">起始时间或结束时间不能为空</string>
-    <string name="car_dialog_time_wrong">起始时间不能大于结束时间</string>
-    <string name="car_dialog_time_limit">请控制间隔时间在24小时</string>
-    <string name="time_choose">时间选择</string>
+    <string name="locus_dialog_start">Start Time:</string>
+    <string name="locus_dialog_stop">End Time:</string>
+    <string name="locas_speed">Speed</string>    
+    <string name="monitor_locus_load">Searching history path...</string>
+    <string name="monitor_locus_null">No history paht. </string>
+    <string name="car_dialog_title">Confirm the time</string>
+      <string name="track_play_finish">Track playback is complete</string>
+    <string name="car_dialog_ok">Search</string>
+    <string name="car_dialog_et_null">Time can not be null</string>
+    <string name="car_dialog_time_wrong">Starting time can not be greater than the end time</string>
+    <string name="car_dialog_time_limit">Time must be interval at 24 hours</string>
+    <string name="time_choose">Time Select</string>
     
-    <string name="Location_wrong">定位异常</string>
-    <string name="allcar_config">参数信息</string>
-    <string name="bt_updatePwd">修改密码</string>
+    <string name="Location_wrong">Loaction Exception</string>
+    <string name="allcar_config">Parameter information</string>
+    <string name="bt_updatePwd">Modify password</string>
     
     <!-- 配置界面 -->   	
-   	<string name="is_ref">是否自动刷新</string>
-   	<string name="is_ref_yes">是</string>
-   	<string name="is_ref_no">否</string>   	
-   	<string name="config_update_time">监控刷新时间（s）</string>
-    <string name="config_update_in_xml_ok">配置信息添加成功</string>    
-   	
-   	<string name="oldPassWord">原密码：</string>
-    <string name="newPassWord">新密码：</string>
-    <string name="newPassWordToo">再次输入新密码：</string>
-    <string name="changePwd_title">密码修改</string>
-    <string name="setting">参数设置</string>
-    <string name="change_pwd_null">修改用户信息不能为空，请重新输入</string>
-    <string name="change_pwd_TwoNewPwd_false">2次新密码输入不同，请检查后输入。</string>
-    <string name="change_pwd_now">密码修改中,请稍后.</string>
-    <string name="change_pwd_true">密码修改成功</string>
-    <string name="change_pwd_false">密码修改失败,请重试.</string>
     
-    <string name="serach_pd_title">数据读取</string>
-    <string name="serach_pd_context">读取数据中,请稍后.</string>
-    <string name="search_null">没有符合的数据</string>
+    <string name="my_info">My Information</string>
+    
+   	<string name="is_ref">Auto refresh</string>
+   	<string name="is_ref_yes">Yes</string>
+   	<string name="is_ref_no">No</string>   	
+   	<string name="config_update_time">Refresh(s)</string>
+    <string name="config_update_in_xml_ok">Configuration information to add success</string>    
+   	
+   	<string name="oldPassWord">Old password:</string>
+    <string name="newPassWord">New password:</string>
+    <string name="newPassWordToo">Enter new password again</string>
+    <string name="changePwd_title">Password modification</string>
+    <string name="setting">Parameter Setting</string>
+    <string name="change_pwd_null">Account message can not be null</string>
+    <string name="change_pwd_TwoNewPwd_false">2 new password input is different,try again</string>
+    <string name="change_pwd_now">The password is being modified.</string>
+    <string name="change_pwd_true">Password is changed</string>
+    <string name="change_pwd_false">Password modify failed,try again.</string>
+    
+    <string name="serach_pd_title">Read data</string>
+    <string name="serach_pd_context">Reading data...</string>
+    <string name="search_null">No match data</string>
     
     <string name="Traffic">地图</string>
     <string name="Satellite">卫星</string>
-    <string name="Location">地理位置获取中.</string>    
+    <string name="Location">Getting The Location...</string>    
    	
-   	<string name="car_mileage">里程:&#160; </string> 
-   	<string name="car_manager">管理:&#160; </string> 
-   	<string name="car_driver">司机:&#160; </string> 
-   	<string name="car_fuel">油量 ：</string>
-   	<string name="cancel">取消</string>
-   	<string name="track_replay">轨迹回放</string>
-   	<string name="track">跟踪</string>
+   	<string name="car_mileage">Mileage:&#160; </string> 
+   	<string name="car_manager">Manager:&#160; </string> 
+   	<string name="car_driver">Driver:&#160; </string> 
+   	<string name="car_fuel">Fuel:</string>
+   	<string name="cancel">Cancel</string>
+   	<string name="track_replay">Track Playback</string>
+   	<string name="track">Track</string>
    	
-   	<string name="xlistview_header_hint_normal">下拉刷新</string>
-    <string name="xlistview_header_hint_ready">松开刷新数据</string>
-    <string name="xlistview_header_hint_loading">正在加载...</string>
-    <string name="xlistview_header_last_time">上次更新时间：</string>
-    <string name="xlistview_footer_hint_normal">查看更多</string>
-    <string name="xlistview_footer_hint_ready">松开载入更多</string>    
+   	<string name="xlistview_header_hint_normal">Pull down refresh</string>
+    <string name="xlistview_header_hint_ready">Loosen refresh</string>
+    <string name="xlistview_header_hint_loading">Loading...</string>
+    <string name="xlistview_header_last_time">Last update:</string>
+    <string name="xlistview_footer_hint_normal">More...</string>
+    <string name="xlistview_footer_hint_ready">Release load more</string>    
    	
 	<string-array name="alarm1">
-   		<item>剪线报警</item>
-   		<item>GPS断线报警</item>
-   		<item>超速报警</item>
-   		<item>低电压报警</item>
-   		<item>超时停车报警</item>
+   		<item>Line alarm</item>
+   		<item>GPS disconnection alarm</item>
+   		<item>Speed Alarm</item>
+   		<item>Low voltage alarm</item>
+   		<item>Overtime parking alarm</item>
    		<item>Sensor 1 On</item>
    		<item>Sensor 2 On</item>
    		<item>Sensor 3 On</item>
-   		<item>锁车状态</item>
+   		<item>Locked car status</item>
    	</string-array>
    	
-    <string name="total">总计</string>
+    <string name="total">Total</string>
     <string name="alarm">Alarm</string>
-   	<string name="accon">启动</string>
-    <string name="accoff">熄火</string>
+   	<string name="accon">Start UP</string>
+    <string name="accoff">Flameout</string>
     
 </resources>

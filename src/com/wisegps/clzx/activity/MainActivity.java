@@ -11,7 +11,6 @@ import com.wisegps.clzx.view.CarViewHelper;
 import com.wisegps.clzx.view.ChangepsdView;
 import com.wisegps.clzx.view.ConfigView;
 import com.wisegps.clzx.view.GoogleMapViewHelper;
-//import com.wisegps.clzx.view.MapViewHelper;
 import com.wisegps.clzx.view.adapter.OnCarSelectedByKeyListener;
 import com.wisegps.clzx.view.adapter.OnCarSelectedListener;
 
@@ -49,7 +48,6 @@ public class MainActivity extends Activity implements OnClickListener,
 	private GoogleMap googleMap;
 	private WGoogleMap wgoogleMap;
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -80,15 +78,19 @@ public class MainActivity extends Activity implements OnClickListener,
 		jpush.initJpushSdk();
 		showLetterActivity();
 		initDrawer();
-
 	}
 
 	public void initDrawer() {
 		final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
 		ListView listView = (ListView) findViewById(R.id.left_drawer);
 		listView.setAdapter(new BaseAdapter(){
-			 String[] strs = {"我的信息" ,"修改密码", "参数设置" };
-			 int[] icons = {android.R.drawable.sym_action_chat,android.R.drawable.ic_lock_lock,android.R.drawable.ic_menu_manage};
+			
+			String myMsg = getResources().getString(R.string.my_info);
+			String modifyPassword = getResources().getString(R.string.changePwd_title);
+			String setting = getResources().getString(R.string.setting); 
+			 
+			String[] strs = {myMsg,modifyPassword, setting};
+			int[] icons = {android.R.drawable.sym_action_chat,android.R.drawable.ic_lock_lock,android.R.drawable.ic_menu_manage};
 			@Override
 			public int getCount() {
 				return strs.length;
