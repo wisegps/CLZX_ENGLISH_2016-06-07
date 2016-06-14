@@ -51,7 +51,7 @@ public class JpushReceiver extends BroadcastReceiver {
         	
         	
         	String msg = "";
-        	String msg_name ="通知";
+        	String msg_name =context.getResources().getString(R.string.notifi);
         	try {
         		JSONObject jsonObject = new JSONObject(result);
         		msg = jsonObject.getString("msg");

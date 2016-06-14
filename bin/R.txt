@@ -504,6 +504,7 @@ int string monitor_locus_null 0x7f070045
 int string my_info 0x7f070050
 int string newPassWord 0x7f070057
 int string newPassWordToo 0x7f070058
+int string notifi 0x7f07007b
 int string oldPassWord 0x7f070056
 int string password_hit 0x7f070036
 int string pull_to_refresh_from_bottom_pull_label 0x7f070026

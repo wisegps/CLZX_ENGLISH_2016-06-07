@@ -109,4 +109,5 @@
     <string name="traffic_flow_off">实时路况已关闭</string>
     <string name="can_not_be_null">不能为空</string>
     <string name="app_version">版本:</string>
+    <string name="notifi">通知</string>
 </resources>

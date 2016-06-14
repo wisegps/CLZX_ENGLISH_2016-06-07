@@ -113,4 +113,6 @@
     <string name="app_version">Version:</string>
     <string name="can_not_be_null">Can not be null</string>
     
+    <string name="notifi">Notice</string>
+    
 </resources>
