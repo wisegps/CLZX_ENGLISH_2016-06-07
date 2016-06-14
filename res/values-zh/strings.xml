@@ -105,4 +105,8 @@
    	<string name="accon">启动</string>
     <string name="accoff">熄火</string>
     
+    <string name="traffic_flow_on">实时路况已打开</string>
+    <string name="traffic_flow_off">实时路况已关闭</string>
+    <string name="can_not_be_null">不能为空</string>
+    <string name="app_version">版本:</string>
 </resources>

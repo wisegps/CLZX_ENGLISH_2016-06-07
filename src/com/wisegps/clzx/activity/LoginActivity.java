@@ -214,7 +214,7 @@ public class LoginActivity extends Activity{
 	        PackageManager manager = this.getPackageManager();
 	        PackageInfo info = manager.getPackageInfo(this.getPackageName(), 0);
 	        String version = info.versionName;
-	        return "版本：CLZX_V"+ version;
+	        return getResources().getString(R.string.app_version) + " CLZX_V"+ version;
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	        return "";

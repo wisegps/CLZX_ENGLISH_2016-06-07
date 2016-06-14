@@ -108,4 +108,9 @@
    	<string name="accon">Start UP</string>
     <string name="accoff">Flameout</string>
     
+    <string name="traffic_flow_on">Traffic Flow Was On</string>
+    <string name="traffic_flow_off">Traffic Flow Was Off</string>
+    <string name="app_version">Version:</string>
+    <string name="can_not_be_null">Can not be null</string>
+    
 </resources>

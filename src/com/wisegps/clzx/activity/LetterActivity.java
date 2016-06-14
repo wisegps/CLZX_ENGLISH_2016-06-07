@@ -119,7 +119,7 @@ public class LetterActivity extends Activity {
 		view.setEnabled(false);
 		String msg = editText.getText().toString().trim();
 		if (msg == null || msg.length() < 1) {
-			Toast.makeText(this, "不能为空", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.can_not_be_null), Toast.LENGTH_SHORT).show();
 			return;
 		}
 		editText.setText("");

@@ -140,7 +140,6 @@ public class MainActivity extends Activity implements OnClickListener,
 			Intent iLetter = new Intent(MainActivity.this, LetterActivity.class);
 			startActivity(iLetter);
 		}
-
 	}
 
 	public ContacterData getCurrentUserInfo() {
@@ -233,12 +232,12 @@ public class MainActivity extends Activity implements OnClickListener,
 			((ImageView) view).setImageResource(R.drawable.main_icon_roadcondition_on);
 			wgoogleMap.setTrafficEnabled(true);
 			view.setTag("");
-			Toast.makeText(this, "实时路况已打开", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.traffic_flow_on), Toast.LENGTH_SHORT).show();
 		} else {
 			((ImageView) view).setImageResource(R.drawable.main_icon_roadcondition_off);
 			wgoogleMap.setTrafficEnabled(false);
 			view.setTag("default");
-			Toast.makeText(this, "实时路况已关闭", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, getResources().getString(R.string.traffic_flow_off), Toast.LENGTH_SHORT).show();
 		}
 	}
 

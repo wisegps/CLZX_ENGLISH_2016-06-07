@@ -427,7 +427,9 @@ int string accout_bind_phone 0x7f07003c
 int string alarm 0x7f070074
 int string allcar_config 0x7f07004e
 int string app_name 0x7f07002a
+int string app_version 0x7f070079
 int string bt_updatePwd 0x7f07004f
+int string can_not_be_null 0x7f07007a
 int string cancel 0x7f07006a
 int string car_data 0x7f070030
 int string car_dialog_et_null 0x7f070049
@@ -522,6 +524,8 @@ int string total 0x7f070073
 int string track 0x7f07006c
 int string track_play_finish 0x7f070047
 int string track_replay 0x7f07006b
+int string traffic_flow_off 0x7f070078
+int string traffic_flow_on 0x7f070077
 int string tv_check_update 0x7f070032
 int string wallet_buy_button_place_holder 0x7f070022
 int string xlistview_footer_hint_normal 0x7f070071
