@@ -17,6 +17,7 @@ import com.wisegps.clzx.view.adapter.OnCarSelectedListener;
 import android.WGoogleMap;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,11 +30,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -217,7 +220,8 @@ public class MainActivity extends Activity implements OnClickListener,
 
 			break;
 		case R.id.tv_set_map_type:// 卫星图显示
-			setMapType(view);
+//			setMapType(view);
+			showPopMapLayers();
 			break;
 		}
 
@@ -229,33 +233,54 @@ public class MainActivity extends Activity implements OnClickListener,
 	public void setTraffic(View view) {
 		String isTraffic = (String) view.getTag();
 		if (isTraffic.equals("default")) {
-			((ImageView) view).setImageResource(R.drawable.main_icon_roadcondition_on);
+			((ImageView) view).setImageResource(R.drawable.ic_main_icon_roadcondition_on);
 			wgoogleMap.setTrafficEnabled(true);
 			view.setTag("");
 			Toast.makeText(this, getResources().getString(R.string.traffic_flow_on), Toast.LENGTH_SHORT).show();
 		} else {
-			((ImageView) view).setImageResource(R.drawable.main_icon_roadcondition_off);
+			((ImageView) view).setImageResource(R.drawable.ic_main_icon_roadcondition_off);
 			wgoogleMap.setTrafficEnabled(false);
 			view.setTag("default");
 			Toast.makeText(this, getResources().getString(R.string.traffic_flow_off), Toast.LENGTH_SHORT).show();
 		}
 	}
+	
+	
 
 	/**
-	 * @param view 
+	 * 设置地图类型
 	 */
-	public void setMapType(View view) {
-		String isSatellite = (String) view.getTag();
-		if (isSatellite.equals("default")) {// 设置为卫星模式
-			wgoogleMap.setMapType(WGoogleMap.MAP_TYPE_SATELLITE);
-			((TextView) view).setText(R.string.Satellite);
-			view.setTag("");
-		} else {// 设置为普通地图
-			wgoogleMap.setMapType(WGoogleMap.MAP_TYPE_NORMAL);
-			((TextView) view).setText(R.string.Traffic);
-			view.setTag("default");
-		}
+	private void showPopMapLayers() {
+		LayoutInflater mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+		View popunwindwow = mLayoutInflater.inflate(R.layout.popup_map_selector, null);
+		final PopupWindow mPopupWindow = new PopupWindow(popunwindwow, LayoutParams.FILL_PARENT,
+				LayoutParams.WRAP_CONTENT);
+		mPopupWindow.setBackgroundDrawable(new BitmapDrawable());
+		mPopupWindow.setFocusable(true);
+		mPopupWindow.setOutsideTouchable(true);
+		mPopupWindow.showAsDropDown(findViewById(R.id.tv_set_map_type), 0, 0);
+		ImageView iv_satellite = (ImageView) popunwindwow.findViewById(R.id.iv_satellite);
+		iv_satellite.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				wgoogleMap.setMapType(WGoogleMap.MAP_TYPE_SATELLITE);
+				mPopupWindow.dismiss();
+			}
+		});
+		ImageView iv_plain = (ImageView) popunwindwow.findViewById(R.id.iv_plain);
+		iv_plain.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				wgoogleMap.setMapType(WGoogleMap.MAP_TYPE_NORMAL);
+				mPopupWindow.dismiss();
+			}
+		});
 	}
+	
 
 	@Override
 	public void finish() {

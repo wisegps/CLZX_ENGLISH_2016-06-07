@@ -33,10 +33,12 @@ public class MapBiz {
 
 	private Handler handler = null;
 	private View popView = null;
+	private Context mContext;
 
-	public MapBiz(Handler handler) {
+	public MapBiz(Handler handler,Context context) {
 		super();
 		this.handler = handler;
+		this.mContext = context;
 	}
 
 	public View getPopView(final Context context, CarInfo carInfo) {
@@ -223,9 +225,9 @@ public class MapBiz {
 				JSONArray jsonArrayAlerts = jsonData
 						.getJSONArray("uni_alerts");
 				
-				String status = ResolveData.getStatusDesc(gps_flag, speed,
-						ResolveData.getUniStatusDesc(jsonArrayStatus),
-						ResolveData.getUniAlertsDesc(jsonArrayAlerts));
+				String status = ResolveData.getStatusDesc(mContext,gps_flag, speed,
+						ResolveData.getUniStatusDesc(mContext,jsonArrayStatus),
+						ResolveData.getUniAlertsDesc(mContext,jsonArrayAlerts));
 				
 				carInfo.setMDTStatus(status);
 				

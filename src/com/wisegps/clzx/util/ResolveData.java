@@ -2,7 +2,10 @@ package com.wisegps.clzx.util;
 
 
 import org.json.JSONArray;
-import org.json.JSONException;
+
+import android.content.Context;
+
+import com.wisegps.clzx.R;
 
 
 public class ResolveData {
@@ -15,11 +18,12 @@ public class ResolveData {
 	 * @param speed
 	 * @return 1 离线；2 报警；3 行驶；4 静止
 	 */
-	public static int getCarStatus(String Rcv_time, JSONArray jsonArray,
+	
+	public static int getCarStatus(Context context,String Rcv_time, JSONArray jsonArray,
 			int speed) {
 		if (AllStaticClass.GetTimeDiff(Rcv_time) > 10) {
 			return 1;
-		} else if (getUniAlertsDesc(jsonArray).length() > 0) {
+		} else if (getUniAlertsDesc(context,jsonArray).length() > 0) {
 			return 2;
 		} else if (speed > 0) {
 			return 3;
@@ -43,21 +47,21 @@ public class ResolveData {
 	 *            状态
 	 * @return
 	 */
-	public static String getStatusDesc(int gps_flag,
+	public static String getStatusDesc(Context context,int gps_flag,
 			int speed, String UniStatusDesc, String UniAlertsDesc) {
 		String desc = "";
 			if (gps_flag % 2 == 0) {
 				if (speed > 10) {// 速度判断
-					desc = "行驶," + UniStatusDesc + UniAlertsDesc + " " + speed
-							+ "公里/小时";
+					desc = context.getResources().getString(R.string.car_drive) + UniStatusDesc + UniAlertsDesc + " " + speed
+							+ context.getResources().getString(R.string.speed_kmh);
 				} else {
-					desc = "静止," + UniStatusDesc + UniAlertsDesc;
+					desc = context.getResources().getString(R.string.car_stop) + UniStatusDesc + UniAlertsDesc;
 				}
 			} else {
 				if (speed > 10) {
-					desc = "盲区," + UniStatusDesc + UniAlertsDesc;
+					desc = context.getResources().getString(R.string.car_Blind) + UniStatusDesc + UniAlertsDesc;
 				} else {
-					desc = "静止," + UniStatusDesc + UniAlertsDesc;
+					desc = context.getResources().getString(R.string.car_stop) + UniStatusDesc + UniAlertsDesc;
 				}
 			}
 		if (desc.endsWith(",")) {// 格式化结果
@@ -81,27 +85,27 @@ public class ResolveData {
 	 *            状态
 	 * @return
 	 */
-	public static String getStatusDesc(String Rec_time, int gps_flag,
+	public static String getStatusDesc(Context context,String Rec_time, int gps_flag,
 			int speed, String UniStatusDesc, String UniAlertsDesc) {
 		String desc = "";
 		long time = GetSystem.GetTimeDiff(Rec_time);
 		if (time < 10) {// 是否在线
 			if (gps_flag % 2 == 0) {
 				if (speed > 10) {// 速度判断
-					desc = "行驶," + UniStatusDesc + UniAlertsDesc + " " + speed
-							+ "公里/小时";
+					desc = context.getResources().getString(R.string.car_drive) + UniStatusDesc + UniAlertsDesc + " " + speed
+							+ context.getResources().getString(R.string.speed_kmh);
 				} else {
-					desc = "静止," + UniStatusDesc + UniAlertsDesc;
+					desc = context.getResources().getString(R.string.car_stop) + UniStatusDesc + UniAlertsDesc;
 				}
 			} else {
 				if (speed > 10) {
-					desc = "盲区," + UniStatusDesc + UniAlertsDesc;
+					desc = context.getResources().getString(R.string.car_Blind) + UniStatusDesc + UniAlertsDesc;//"盲区,"
 				} else {
-					desc = "静止," + UniStatusDesc + UniAlertsDesc;
+					desc = context.getResources().getString(R.string.car_stop) + UniStatusDesc + UniAlertsDesc;
 				}
 			}
 		} else {
-			desc = "离线" + GetSystem.ShowOfflineTime(time);
+			desc = context.getResources().getString(R.string.car_offline) + GetSystem.ShowOfflineTime(time);//离线
 		}
 		if (desc.endsWith(",")) {// 格式化结果
 			desc = desc.substring(0, desc.length() - 1);
@@ -116,19 +120,19 @@ public class ResolveData {
 
 	static int STATUS_RUN = 8196;
 
-	public static String getUniStatusDesc(JSONArray jsonArray) {
+	public static String getUniStatusDesc(Context context,JSONArray jsonArray) {
 		String str = "";
 		for (int i = 0; i < jsonArray.length(); i++) {
 			try {
 				String jsonString = jsonArray.getString(i);
 				if (jsonString.equals(STATUS_FORTIFY)) {
-					str += "设防,";
+					str +=  context.getResources().getString(R.string.car_set_fortification);//"设防,"
 				} else if (jsonString.equals(STATUS_LOCK)) {
-					str += "锁车,";
+					str +=  context.getResources().getString(R.string.car_Lock_the_car);//"锁车,"
 				} else if (jsonString.equals(STATUS_FORTIFY)) {
-					str += "基站定位,";
+					str += context.getResources().getString(R.string.car_base_station_location);// "基站定位," 
 				} else if (jsonString.equals(STATUS_FORTIFY)) {
-					str += "省电状态,";
+					str +=  context.getResources().getString(R.string.car_energy_saver_mode);//"省电状态,"
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -137,16 +141,16 @@ public class ResolveData {
 		return str;
 	}
 
-	public static String getRunStopDesc(int[] status,String lastStopTime) {
+	public static String getRunStopDesc(Context context,int[] status,String lastStopTime) {
 		
-		String str = "熄火" + GetSystem.getStopDuration(lastStopTime);
+		String str = context.getResources().getString(R.string.accoff)  + " " + GetSystem.getStopDuration(lastStopTime);
 		if(status == null){
 			return "";
 		}
 		for (int i = 0; i < status.length; i++) {
 			int s = status[i];
 			if (s == STATUS_RUN) {
-				str = "启动";
+				str = context.getResources().getString(R.string.accon) + " ";
 				break;
 			} 
 		}
@@ -190,39 +194,39 @@ public class ResolveData {
 	static String ALERT_INVALIDACC = "12301";
 	static String ALERT_INVALIDDOOR = "12302";
 
-	public static String getUniAlertsDesc(JSONArray jsonArray) {
+	public static String getUniAlertsDesc(Context context ,JSONArray jsonArray) {
 		String str = "";
 		for (int i = 0; i < jsonArray.length(); i++) {
 			try {
 				String jsonString = jsonArray.getString(i);
 				if (jsonString.equals(ALERT_SOS)) {
-					str += "紧急报警,";
+					str +=  context.getResources().getString(R.string.car_emergency_alarm);//"紧急报警,"
 				} else if (jsonString.equals(ALERT_OVERSPEED)) {
-					str += "超速报警,";
+					str +=  context.getResources().getString(R.string.car_speed_alarm);//"超速报警,"
 				} else if (jsonString.equals(ALERT_VIRBRATE)) {
-					str += "震动报警,";
+					str += context.getResources().getString(R.string.car_vibration_alarm);//"震动报警,"
 				} else if (jsonString.equals(ALERT_MOVE)) {
-					str += "位移报警,";
+					str += context.getResources().getString(R.string.car_displacement_alarm);//"位移报警,"
 				} else if (jsonString.equals(ALERT_ALARM)) {
-					str += "防盗器报警,";
+					str += context.getResources().getString(R.string.car_burglar_alarm);//"防盗器报警,"
 				} else if (jsonString.equals(ALERT_INVALIDRUN)) {
-					str += "非法行驶报警,";
+					str += context.getResources().getString(R.string.car_illegal_driving_alarm);//"非法行驶报警,
 				} else if (jsonString.equals(ALERT_ENTERGEO)) {
-					str += "进围栏报警,";
+					str += context.getResources().getString(R.string.car_into_fence_alarm);//"进围栏报警,"
 				} else if (jsonString.equals(ALERT_EXITGEO)) {
-					str += "出围栏报警,";
+					str +=context.getResources().getString(R.string.car_out_of_fence_alarm);// "出围栏报警,"
 				} else if (jsonString.equals(ALERT_CUTPOWER)) {
-					str += "剪线报警,";
+					str += context.getResources().getString(R.string.car_cut_off_line_alarm);//"剪线报警,"
 				} else if (jsonString.equals(ALERT_LOWPOWER)) {
-					str += "低电压报警,";
+					str += context.getResources().getString(R.string.car_low_power_alarm);//"低电压报警,"
 				} else if (jsonString.equals(ALERT_GPSCUT)) {
-					str += "GPS断线报警,";
+					str += context.getResources().getString(R.string.car_GPS_disconnection_alarm);//"GPS断线报警,"
 				} else if (jsonString.equals(ALERT_OVERDRIVE)) {
-					str += "疲劳驾驶报警,";
+					str += context.getResources().getString(R.string.car_fatigue_driving_alarm);//"疲劳驾驶报警,"
 				} else if (jsonString.equals(ALERT_INVALIDACC)) {
-					str += "非法点火报警,";
+					str += context.getResources().getString(R.string.car_illegal_power_alarm);//"非法点火报警,"
 				} else if (jsonString.equals(ALERT_INVALIDDOOR)) {
-					str += "非法开门报警,";
+					str += context.getResources().getString(R.string.car_illegal_door_alarm);//"非法开门报警,"
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

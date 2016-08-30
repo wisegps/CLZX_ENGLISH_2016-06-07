@@ -6,5 +6,7 @@
     <color name="common_pressed">#106576</color>
     
     <color name="color_content">#545866</color>
+    <color name="bd_wallet_item_bg_blue">#ff37a6fb</color>
+    <color name="bd_wallet_item_bg_blue_hover">#ff5fb2f9</color>
 
 </resources>

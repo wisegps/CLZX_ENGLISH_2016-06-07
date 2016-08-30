@@ -60,7 +60,7 @@ public class FlowView implements Callback {
 		this.context = context;
 		this.mapViewHandler = mapViewHandler;
 		flowHandler = new Handler(this);
-		flowMapBiz = new MapBiz(flowHandler);
+		flowMapBiz = new MapBiz(flowHandler,context);
 		db = new DBCarInfo(context);
 		db.deleteAll();
 		carPathList = new ArrayList<CarInfo>();

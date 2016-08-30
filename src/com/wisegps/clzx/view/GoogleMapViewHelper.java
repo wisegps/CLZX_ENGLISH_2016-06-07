@@ -91,7 +91,7 @@ public class GoogleMapViewHelper implements OnClickTimeDialogListener {
 		this.googleMap = googleMap;
 		wGoogleMap = new WGoogleMap(context,googleMap);
 		this.googleMap.setOnMarkerClickListener(onMarkerClickListener);
-		this.mapBiz = new MapBiz(handler);
+		this.mapBiz = new MapBiz(handler,context);
 		this.trackView = new TrackView(context, handler);
 		this.flowView = new FlowView(context, handler);
 		// 实现OnClickTimeDialogListener接口，在time函数返回时间

@@ -1,25 +1,19 @@
 package com.wisegps.clzx.view;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.wisegps.clzx.R;
-import com.wisegps.clzx.activity.LoginActivity;
 import com.wisegps.clzx.app.Msg;
 import com.wisegps.clzx.biz.CarBiz;
 import com.wisegps.clzx.biz.RefreshThread;
 import com.wisegps.clzx.entity.CarInfo;
 import com.wisegps.clzx.entity.ContacterData;
-import com.wisegps.clzx.util.GetSystem;
 import com.wisegps.clzx.view.XListView.IXListViewListener;
 import com.wisegps.clzx.view.adapter.CarAdapter;
 import com.wisegps.clzx.view.adapter.OnCarAutoSelectedListener;
@@ -28,11 +22,8 @@ import com.wisegps.clzx.view.adapter.OnCarSelectedListener;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -41,9 +32,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -148,7 +137,7 @@ public class CarViewHelper {
 	private void initData() {
 		// 获取用户列表
 
-		carBiz = new CarBiz(handler);
+		carBiz = new CarBiz(handler,activity);
 		carBiz.requestUserList();
 
 		// 定时刷新车辆列表
@@ -209,7 +198,7 @@ public class CarViewHelper {
 					notifyCarList();
 					lv_cars.stopLoadMore();
 				}else{
-					Toast.makeText(activity, "没有车辆", Toast.LENGTH_SHORT).show();
+					Toast.makeText(activity, activity.getResources().getString(R.string.no_car), Toast.LENGTH_SHORT).show();
 				}
 				break;
 
@@ -248,15 +237,15 @@ public class CarViewHelper {
 	}
 
 	private void notifyCarList() {
+		Log.i("CarViewHelper", "notifyCarList:" + carinfos.size());
 		if(carinfos.size()>0){
 			// if(carAdapter == null){
 			carAdapter = new CarAdapter(activity, carinfos);
 			lv_cars.setAdapter(carAdapter);
 			// }
-			Log.i("CarViewHelper", "notifyCarList:" + carinfos.size());
-			carAdapter.notifyDataSetChanged();
 			onCarSelectedListener.onCarSelectedDefault(car_index);
 		}
+		carAdapter.notifyDataSetChanged();
 	}
 
 	private void refreshCarList() {
@@ -265,10 +254,10 @@ public class CarViewHelper {
 				carAdapter = new CarAdapter(activity, carinfos);
 				lv_cars.setAdapter(carAdapter);
 			}
-			carAdapter.notifyDataSetChanged();
-			Log.i("CarViewHelper", "notifyCarList");
 			onCarSelectedListener.onCarRefresh();
 		}
+		Log.i("CarViewHelper", "notifyCarList");
+		carAdapter.notifyDataSetChanged();
 	}
 
 	private void notifyUserList() {

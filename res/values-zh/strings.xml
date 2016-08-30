@@ -69,8 +69,8 @@
     <string name="serach_pd_context">读取数据中,请稍后.</string>
     <string name="search_null">没有符合的数据</string>
     
-    <string name="Traffic">地图</string>
-    <string name="Satellite">卫星</string>
+    <string name="Traffic">常规地图</string>
+    <string name="Satellite">卫星地图</string>
     <string name="Location">地理位置获取中.</string>    
    	
    	<string name="car_mileage">里程:&#160; </string> 
@@ -110,4 +110,48 @@
     <string name="can_not_be_null">不能为空</string>
     <string name="app_version">版本:</string>
     <string name="notifi">通知</string>
+    
+    <string name="no_car">没有车辆</string>
+    
+    <string name="car_stop">静止,</string>
+    <string name="car_drive">行驶,</string>
+    <string name="speed_kmh">公里/小时</string>
+    <string name="car_offline">离线,</string>
+    <string name="car_Blind">盲区,</string>
+    
+    <string name="car_emergency_alarm">紧急报警,</string>
+	<string name="car_speed_alarm">超速报警,</string>
+	<string name="car_vibration_alarm">震动报警,</string>
+	<string name="car_displacement_alarm">位移报警,</string>
+	
+	<string name="car_burglar_alarm">防盗器报警,</string>
+	<string name="car_illegal_driving_alarm">非法行驶报警,</string>
+	<string name="car_into_fence_alarm">进围栏报警,</string>
+	<string name="car_out_of_fence_alarm">出围栏报警,</string>
+	<string name="car_cut_off_line_alarm">剪线报警,</string>
+	<string name="car_low_power_alarm">低电压报警,</string>
+	
+	<string name="car_GPS_disconnection_alarm">GPS断线报警,</string>
+	<string name="car_fatigue_driving_alarm">疲劳驾驶报警,</string>
+	<string name="car_illegal_power_alarm">非法点火报警,</string>
+	<string name="car_illegal_door_alarm">非法开门报警,</string>
+	
+	
+	<string name="car_set_fortification">设防,</string>
+	<string name="car_Lock_the_car">锁车,</string>
+	<string name="car_base_station_location">基站定位,</string>
+	<string name="car_energy_saver_mode">省电状态,</string>
+	
+
+    <!-- 
+    if (jsonString.equals(STATUS_FORTIFY)) {
+					str += "设防,";
+				} else if (jsonString.equals(STATUS_LOCK)) {
+					str += "锁车,";
+				} else if (jsonString.equals(STATUS_FORTIFY)) {
+					str += "基站定位,";
+				} else if (jsonString.equals(STATUS_FORTIFY)) {
+					str += "省电状态,";
+				}
+     -->
 </resources>

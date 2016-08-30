@@ -1,6 +1,5 @@
 package com.wisegps.clzx.activity;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.wisegps.clzx.R;

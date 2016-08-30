@@ -36,7 +36,7 @@
     <string name="monitor_locus_load">Searching history path...</string>
     <string name="monitor_locus_null">No history paht. </string>
     <string name="car_dialog_title">Confirm the time</string>
-      <string name="track_play_finish">Track playback is complete</string>
+      <string name="track_play_finish">Track playback was done</string>
     <string name="car_dialog_ok">Search</string>
     <string name="car_dialog_et_null">Time can not be null</string>
     <string name="car_dialog_time_wrong">Starting time can not be greater than the end time</string>
@@ -72,8 +72,8 @@
     <string name="serach_pd_context">Reading data...</string>
     <string name="search_null">No match data</string>
     
-    <string name="Traffic">地图</string>
-    <string name="Satellite">卫星</string>
+    <string name="Traffic">Normal</string>
+    <string name="Satellite">Satellite</string>
     <string name="Location">Getting The Location...</string>    
    	
    	<string name="car_mileage">Mileage:&#160; </string> 
@@ -114,5 +114,35 @@
     <string name="can_not_be_null">Can not be null</string>
     
     <string name="notifi">Notice</string>
+    
+    <string name="no_car">no cars</string>
+    <string name="car_stop">Stop,</string>
+    <string name="car_drive">Driving,</string>
+    <string name="speed_kmh">km/h</string>
+    <string name="car_offline">Off-line,</string>
+    <string name="car_Blind">Blind area,</string>
+    
+    <string name="car_emergency_alarm">Emergency Alarm,</string>
+	<string name="car_speed_alarm">Speed Alarm,</string>
+	<string name="car_vibration_alarm">Vibration Alarm,</string>
+	<string name="car_displacement_alarm">Displacement Alarm,</string>
+	
+	<string name="car_burglar_alarm">Burglar Alarm,</string>
+	<string name="car_illegal_driving_alarm">Illegal Driving,</string>
+	<string name="car_into_fence_alarm">Into The Fence Alarm,</string>
+	<string name="car_out_of_fence_alarm">Out Of The Fence Alarm,</string>
+	<string name="car_cut_off_line_alarm">Cut Of Line Alarm,</string>
+	<string name="car_low_power_alarm">Low Power Alarm,</string>
+	
+	<string name="car_GPS_disconnection_alarm">GPS Disconnect Alarm,</string>
+	<string name="car_fatigue_driving_alarm">Fatigue Driving Alarm,</string>
+	<string name="car_illegal_power_alarm">Illegal Power On Alarm,</string>
+	<string name="car_illegal_door_alarm">Illegal Door Alarm,</string>
+    
+    
+    <string name="car_set_fortification">Set Fortification,</string>
+	<string name="car_Lock_the_car">Lock The Car,</string>
+	<string name="car_base_station_location">Base Station Location,</string>
+	<string name="car_energy_saver_mode">Energy Saver Mode,</string>
     
 </resources>

@@ -68,7 +68,7 @@ public class TrackView implements Callback {
 		this.context = context;
 		this.mapViewHandler = mapViewHandler;
 		trackHandler = new Handler(this);
-		trackMapBiz = new MapBiz(trackHandler);
+		trackMapBiz = new MapBiz(trackHandler,context);
 		db = new DBCarInfo(context);
 		db.deleteAll();
 		layout_bar = (LinearLayout) ((Activity) context)

@@ -18,6 +18,7 @@ import com.wisegps.clzx.util.GetSystem;
 import com.wisegps.clzx.util.JsonUtil;
 import com.wisegps.clzx.util.ResolveData;
 
+import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 import android.util.Xml.Encoding;
@@ -29,9 +30,12 @@ public class CarBiz {
 	private int Car_Page_total;
 	private String latestTime = "";
 
-	public CarBiz(Handler handler) {
+	private Context mContext;
+	
+	public CarBiz(Handler handler,Context context) {
 		super();
 		this.handler = handler;
+		this.mContext = context;
 	}
 
 	public void requestUserList() {
@@ -169,14 +173,14 @@ public class CarBiz {
 					JSONArray jsonArrayAlerts = jsonData
 							.getJSONArray("uni_alerts");
 					
-					String status = ResolveData.getStatusDesc(rcv_time,
+					String status = ResolveData.getStatusDesc(mContext,rcv_time,
 							gps_flag, speed,
-							ResolveData.getUniStatusDesc(jsonArrayStatus),
-							ResolveData.getUniAlertsDesc(jsonArrayAlerts));
+							ResolveData.getUniStatusDesc(mContext,jsonArrayStatus),
+							ResolveData.getUniAlertsDesc(mContext,jsonArrayAlerts));
 					
 					carInfo.setMDTStatus(status);
 					
-					carInfo.setCarStatus(ResolveData.getCarStatus(rcv_time,
+					carInfo.setCarStatus(ResolveData.getCarStatus(mContext,rcv_time,
 							jsonArrayAlerts, speed));
 					
 					latestTime = GetSystem.LatestTime(latestTime, rcv_time);
@@ -263,11 +267,11 @@ public class CarBiz {
 							carInfo.setUniStatus(uniStatus);
 							
 							
-							String status = ResolveData.getStatusDesc(rcv_time,
+							String status = ResolveData.getStatusDesc(mContext,rcv_time,
 									gps_flag, speed, ResolveData
-											.getUniStatusDesc(jsonArrayStatus),
+											.getUniStatusDesc(mContext,jsonArrayStatus),
 									ResolveData
-											.getUniAlertsDesc(jsonArrayAlerts));
+											.getUniAlertsDesc(mContext,jsonArrayAlerts));
 							carInfo.setMDTStatus(status);
 							latestTime = GetSystem.LatestTime(latestTime,
 									rcv_time);

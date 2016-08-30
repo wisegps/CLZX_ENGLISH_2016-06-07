@@ -86,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_search" >
 
-        <TextView
+        <ImageView
             android:id="@+id/tv_set_map_type"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -95,12 +95,9 @@
             android:layout_marginTop="10dp"
             android:background="#bbb9bb"
             android:padding="5dp"
-            android:text="@string/Satellite"
-            android:textColor="#ffffff"
             android:onClick="onClick"
             android:tag="default"
-            android:gravity="center"
-            android:textSize="14sp" />
+			android:src="@drawable/main_icon_maplayers"  />
 
         <ImageView
             android:id="@+id/iv_map_traffic_set"
@@ -114,7 +111,7 @@
             android:padding="5dp"
             android:onClick="onClick"
             android:tag="default"
-            android:src="@drawable/main_icon_roadcondition_off" />
+            android:src="@drawable/ic_main_icon_roadcondition_off" />
     </RelativeLayout>
 
 

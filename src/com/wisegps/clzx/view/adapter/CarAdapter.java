@@ -102,7 +102,7 @@ public class CarAdapter extends BaseAdapter {
 		
 		
 		String lastStopTime = items.get(position).getLastStopTime();
-		holder.tv_status.setText(ResolveData.getRunStopDesc(status,lastStopTime));
+		holder.tv_status.setText(ResolveData.getRunStopDesc(context,status,lastStopTime));
 		
 		
 		if(position == selectItem){

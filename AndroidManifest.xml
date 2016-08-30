@@ -71,9 +71,11 @@
         android:theme="@style/AppTheme" >
         
         <!-- Google Map -->
+        <!-- 本机的Google map 密钥  AIzaSyCdDSy4h_mk1s_7AESaWqS5g7r2nEiwyGU-->
+        <!-- 发布版本的google map 密钥  AIzaSyBhlpvvcgzS7154tukyOmJ-05NNyG7hUmA -->
         <meta-data 
             android:name="com.google.android.maps.v2.API_KEY"
-    		android:value="AIzaSyCdDSy4h_mk1s_7AESaWqS5g7r2nEiwyGU" />
+    		android:value="AIzaSyBhlpvvcgzS7154tukyOmJ-05NNyG7hUmA" />
         
         <meta-data
             android:name="com.google.android.gms.version"

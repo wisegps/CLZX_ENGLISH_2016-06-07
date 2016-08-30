@@ -71,7 +71,7 @@ public class CarInfoAutoText implements OnItemClickListener, TextWatcher,
 	 */
 	public void init() {
 
-		carBiz = new CarBiz(new Handler(this));
+		carBiz = new CarBiz(new Handler(this),context);
 		autoCompleteText = (AutoCompleteTextView) ((Activity) context)
 				.findViewById(resId);
 		autoCompleteText.addTextChangedListener(this);
